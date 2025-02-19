@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Webshop.Admin">
+    <Position X="3.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAQAACAAAAAAAAAAAAUAAAA=</HashCode>
+      <FileName>BL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Webshop.Kunde">
+    <Position X="5.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAACAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>BL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Webshop.Vare">
+    <Position X="6" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAASAAAAAAgAAAAAAAAAAAAAAAAAAhACAAAAAAAAAAA=</HashCode>
+      <FileName>BL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Webshop.VareCRUD">
+    <Position X="8.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAQAAAAAAAAAAAAAAAUAAAA=</HashCode>
+      <FileName>DAL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Webshop.BrugerCR">
+    <Position X="10.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAACIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Webshop.Bruger">
+    <Position X="4.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAIAAAAAAAAAAAAEAAAABAIAAAAASAAAIAAQ=</HashCode>
+      <FileName>BL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Webshop.Global">
+    <Position X="8" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
