@@ -1,6 +1,6 @@
 ﻿namespace Webshop
 {
-    public static class VareCRUD
+    public static class VareList
     {
 
         public static void LoadVareList()
@@ -8,25 +8,21 @@
             throw new System.NotImplementedException();
         }
 
-        public static void UpdateVare()
+        public static void SaveVareList()
         {
             throw new System.NotImplementedException();
         }
     }
 
-    public static class BrugerCR
+    public static class KundeList
     {
-        public static void CreateKunde()
+
+        public static void SaveKundeList()
         {
             throw new System.NotImplementedException();
         }
 
-        public static void ReadLogin()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public static void ReadKundeList()
+        public static void LoadKundeList()
         {
             throw new System.NotImplementedException();
         }

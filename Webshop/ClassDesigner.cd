@@ -21,17 +21,17 @@
       <FileName>BL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Webshop.VareCRUD">
-    <Position X="8.75" Y="4.5" Width="1.5" />
+  <Class Name="Webshop.VareList">
+    <Position X="8.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAQAAAAAAAAQAAAAAAAAAAAAAAAUAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAABAAAAAAAAAAA=</HashCode>
       <FileName>DAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Webshop.BrugerCR">
-    <Position X="10.5" Y="4.5" Width="1.5" />
+  <Class Name="Webshop.KundeList">
+    <Position X="10" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAACIAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DAL.cs</FileName>
     </TypeIdentifier>
   </Class>
