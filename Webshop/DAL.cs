@@ -2,22 +2,13 @@
 {
     public static class VareCRUD
     {
-        public static void CreateVare()
-        {
-            throw new System.NotImplementedException();
-        }
 
-        public static void ReadVareList()
+        public static void LoadVareList()
         {
             throw new System.NotImplementedException();
         }
 
         public static void UpdateVare()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public static void DeleteVare()
         {
             throw new System.NotImplementedException();
         }
