@@ -2,6 +2,61 @@
 
 namespace Webshop
 {
+    public abstract class Bruger
+    {
+        private string _Adgangskode;
+        private string _Brugernavn;
+        private List<Vare> _Kurv = new List<Vare>();
+
+        public Bruger(string Brugernavn, string Adgangskode)
+        {
+            this.Brugernavn = Brugernavn;
+            this.Adgangskode = Adgangskode;
+        }
+
+        public string Adgangskode
+        {
+            get => _Adgangskode;
+            set
+            {
+                _Adgangskode = value;
+            }
+        }
+
+        public string Brugernavn
+        {
+            get => _Brugernavn;
+            set
+            {
+                _Brugernavn = value;
+            }
+        }
+
+        public List<Vare> Kurv
+        {
+            get => _Kurv;
+            set
+            {
+                _Kurv = value;
+            }
+        }
+
+        public void Login()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void TilføjTilKurv()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Bestil()
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+
     public class Admin : Bruger
     {
 
@@ -40,9 +95,9 @@ namespace Webshop
     {
         private int _KundeID;
 
-        public Kunde()
+        public Kunde(string Brugernavn, string Adgangskode, int KundeID) : base(Brugernavn,Adgangskode)
         {
-            throw new System.NotImplementedException();
+            this.KundeID = KundeID;
         }
 
         public int KundeID
@@ -50,6 +105,7 @@ namespace Webshop
             get => _KundeID;
             set
             {
+                _KundeID = value;
             }
         }
 
@@ -63,11 +119,13 @@ namespace Webshop
     {
         private int _Pris;
         private int _VareNummer;
-        private int _VareNavn;
+        private string _VareNavn;
 
-        public Vare()
+        public Vare(int VareNummer, string VareNavn, int Pris)
         {
-            throw new System.NotImplementedException();
+            this.VareNummer = VareNummer;
+            this.VareNavn = VareNavn;
+            this.Pris = Pris;
         }
 
         public int Pris
@@ -75,14 +133,16 @@ namespace Webshop
             get => _Pris;
             set
             {
+                _Pris = value;
             }
         }
 
-        public int VareNavn
+        public string VareNavn
         {
             get => _VareNavn;
             set
             {
+                _VareNavn = value;
             }
         }
 
@@ -91,70 +151,20 @@ namespace Webshop
             get => _VareNummer;
             set
             {
+                _VareNummer = value;
             }
         }
     }
 
-    public abstract class Bruger
-    {
-        private int _Adgangskode;
-
-        private int _Brugernavn;
-        private int _Kurv;
-
-        public Bruger()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public int Adgangskode
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public int Brugernavn
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public int Kurv
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public void Login()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void TilføjTilKurv()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Bestil()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-
+    
     public static class Global
     {
-        public static void KundeList()
+        public static List<Kunde> KundeList()
         {
             throw new System.NotImplementedException();
         }
 
-        public static void VareList()
+        public static List<Vare> VareList()
         {
             throw new System.NotImplementedException();
         }

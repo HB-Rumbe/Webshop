@@ -1,5 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Webshop.VareList">
+    <Position X="8.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>DAL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Webshop.KundeList">
+    <Position X="10" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="Webshop.Admin">
     <Position X="3.25" Y="5" Width="1.5" />
     <TypeIdentifier>
@@ -21,31 +35,17 @@
       <FileName>BL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Webshop.VareList">
-    <Position X="8.25" Y="4.25" Width="1.5" />
+  <Class Name="Webshop.Global">
+    <Position X="8" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAABAAAAAAAAAAA=</HashCode>
-      <FileName>DAL.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Webshop.KundeList">
-    <Position X="10" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>DAL.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAgACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BL.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Webshop.Bruger">
     <Position X="4.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAIAAAAAAAAAAAAEAAAABAIAAAAASAAAIAAQ=</HashCode>
-      <FileName>BL.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Webshop.Global">
-    <Position X="8" Y="1" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAgACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BL.cs</FileName>
     </TypeIdentifier>
   </Class>
