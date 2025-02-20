@@ -22,8 +22,6 @@ namespace Webshop
             {
                 if (value != null)
                     _Adgangskode = value;
-                else
-                MessageBox.Show("Adgangskode ikke gyldigt");
             }
         }
 
@@ -34,8 +32,6 @@ namespace Webshop
             {
                 if (value != null)
                     _Brugernavn = value;
-                else
-                MessageBox.Show("Brugernavn ikke gyldigt");
             }
         }
 
@@ -53,30 +49,14 @@ namespace Webshop
 
             if (Brugernavn == "admin" && Adgangskode == "admin")
             {
-                return new Admin();
-            }
-
-            foreach (Kunde kunde in Global.KundeList)
-            {
-                if (kunde.Brugernavn == Brugernavn && kunde.Adgangskode == Adgangskode)
+                if(kunde.Brugernavn == Brugernavn && kunde.Adgangskode == Adgangskode)
                 {
-                    return kunde;
+                    return true;
                 }
+                
             }
-            return null;
-        }
-
-        public void TilføjTilKurv(int VareID, int Mængde)
-        {
-            foreach (Vare vare in Global.VareList)
-            {
-                if (VareID == vare.VareID)
-                {
-                    Kurv.Add(new Vare(VareID, vare.VareNavn, vare.VarePris));
-                   
-                }
-            }
-           
+            return false;
+            
         }
 
         public int Bestil()
