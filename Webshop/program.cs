@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+
 namespace Webshop
 {
     internal static class program
@@ -10,10 +12,13 @@ namespace Webshop
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
             Admin admin = new Admin();
-            
+            ApplicationConfiguration.Initialize();
+            KundeList.LoadKundeList();
+            VareList.LoadVareList();
+            Application.Run(new Login());
+            VareList.SaveVareList(Global.VareList);
+            KundeList.SaveKundeList(Global.KundeList);
         }
     }
 }

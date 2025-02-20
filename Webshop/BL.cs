@@ -48,18 +48,22 @@ namespace Webshop
             }
         }
 
-        public bool Login(string Brugernavn, string Adgangskode)
+        public static Bruger _Login(string Brugernavn, string Adgangskode)
         {
-           foreach(Kunde kunde in Global.KundeList)
+
+            if (Brugernavn == "admin" && Adgangskode == "admin")
             {
-                if(kunde.Brugernavn == Brugernavn && kunde.Adgangskode == Adgangskode)
-                {
-                    return true;
-                }
-                
+                return new Admin();
             }
-            return false;
-            
+
+            foreach (Kunde kunde in Global.KundeList)
+            {
+                if (kunde.Brugernavn == Brugernavn && kunde.Adgangskode == Adgangskode)
+                {
+                    return kunde;
+                }
+            }
+            return null;
         }
 
         public void TilføjTilKurv(int VareID, int Mængde)
@@ -133,6 +137,7 @@ namespace Webshop
 
         public Kunde(string Brugernavn, string Adgangskode, int KundeID) : base(Brugernavn,Adgangskode)
         {
+            _Login(Brugernavn, Adgangskode);
             this.KundeID = KundeID;
         }
 
@@ -154,7 +159,7 @@ namespace Webshop
             }
         }
 
-        public void OpretKunde(string Brugernavn, string Adgangskode)
+        public static void OpretKunde(string Brugernavn, string Adgangskode)
         {
             int KundeID = 1;
             

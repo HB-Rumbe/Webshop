@@ -2,9 +2,14 @@
 {
     public static class VareList
     {
-        public static string VareListPath = "VareList.txt";
+        public static string VareListPath = @"C:\\Users\anto3\WebshopLister\VareList.txt";
         public static void SaveVareList(List<Vare> VareList)
         {
+            if (!File.Exists(VareListPath))
+            {
+                File.WriteAllText(VareListPath, "");
+            }
+
             string SavedLine = "";
             foreach (Vare vare in VareList)
             {
@@ -33,9 +38,14 @@
 
     public static class KundeList
     {
-        public static string KundeListPath = "KundeList.txt";
-        public static void SaveKundeList(List<Kunde> KundeList)
+        public static string KundeListPath = @"C:\Users\anto3\WebshopLister\KundeList.txt";
+
+    public static void SaveKundeList(List<Kunde> KundeList)
         {
+            if (!File.Exists(KundeListPath))
+            {
+                File.WriteAllText(KundeListPath, "");
+            }
             string SavedLine = "";
             foreach (Kunde kunde in KundeList)
             {
