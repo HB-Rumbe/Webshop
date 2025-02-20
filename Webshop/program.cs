@@ -12,6 +12,8 @@ namespace Webshop
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+            Admin admin = new Admin();
+            
         }
     }
 }
