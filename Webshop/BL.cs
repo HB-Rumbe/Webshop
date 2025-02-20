@@ -1,7 +1,9 @@
-﻿
+﻿using static Webshop.KundeList;
+using static Webshop.VareList;
 
 namespace Webshop
 {
+
     public abstract class Bruger
     {
         private string _Adgangskode;
@@ -19,7 +21,10 @@ namespace Webshop
             get => _Adgangskode;
             set
             {
-                _Adgangskode = value;
+                if (value != null)
+                    _Adgangskode = value;
+                else
+                MessageBox.Show("Adgangskode ikke gyldigt");
             }
         }
 
@@ -28,7 +33,10 @@ namespace Webshop
             get => _Brugernavn;
             set
             {
-                _Brugernavn = value;
+                if (value != null)
+                    _Brugernavn = value;
+                else
+                MessageBox.Show("Brugernavn ikke gyldigt");
             }
         }
 
@@ -41,9 +49,18 @@ namespace Webshop
             }
         }
 
-        public void Login()
+        public bool Login(string Brugernavn, string Adgangskode)
         {
-            throw new System.NotImplementedException();
+           foreach(Kunde kunde in Global.KundeList)
+            {
+                if(kunde.Brugernavn == Brugernavn && kunde.Adgangskode == Adgangskode)
+                {
+                    return true;
+                }
+                
+            }
+            return false;
+            
         }
 
         public void TilføjTilKurv()
@@ -65,14 +82,19 @@ namespace Webshop
             throw new System.NotImplementedException();
         }
 
-        public void CreateVare()
+        public void CreateVare(int VareID, String VareNavn, int VarePris)
         {
-            throw new System.NotImplementedException();
+
+            Global.VareList.Add(new Vare(VareID,VareNavn,VarePris));
         }
 
-        public void DeleteVare()
+        public void DeleteVare(int VareID)
         {
-            throw new System.NotImplementedException();
+            foreach (Vare vare in Global.VareList)
+            {
+                if (VareID == vare.VareID)
+                Global.VareList.Remove(vare);
+            }
         }
 
         public void ReadVareList()
@@ -80,9 +102,17 @@ namespace Webshop
             throw new System.NotImplementedException();
         }
 
-        public void UpdateVare()
+        public void UpdateVare(int VareID, string VareNavn, int VarePris)
         {
-            throw new System.NotImplementedException();
+            foreach (Vare vare in Global.VareList)
+            {
+                if (VareID == vare.VareID)
+                {
+                    vare.VareNavn = VareNavn;
+                    vare.VarePris = VarePris;
+                }
+                    
+            }
         }
 
         public void ReadKundeList()
@@ -105,6 +135,15 @@ namespace Webshop
             get => _KundeID;
             set
             {
+                foreach(Kunde kunde in Global.KundeList)
+                {
+                    if (value == kunde.KundeID)
+                    {
+                        MessageBox.Show("kundeID allerede brugt");
+                        return;
+                    }
+                }
+
                 _KundeID = value;
             }
         }
@@ -117,23 +156,23 @@ namespace Webshop
 
     public class Vare
     {
-        private int _Pris;
-        private int _VareNummer;
+        private int _VarePris;
+        private int _VareID;
         private string _VareNavn;
 
-        public Vare(int VareNummer, string VareNavn, int Pris)
+        public Vare(int VareID, string VareNavn, int VarePris)
         {
-            this.VareNummer = VareNummer;
+            this.VareID = VareID;
             this.VareNavn = VareNavn;
-            this.Pris = Pris;
+            this.VarePris = VarePris;
         }
 
-        public int Pris
+        public int VarePris
         {
-            get => _Pris;
+            get => _VarePris;
             set
             {
-                _Pris = value;
+                _VarePris = value;
             }
         }
 
@@ -146,12 +185,12 @@ namespace Webshop
             }
         }
 
-        public int VareNummer
+        public int VareID
         {
-            get => _VareNummer;
+            get => _VareID;
             set
             {
-                _VareNummer = value;
+                _VareID = value;
             }
         }
     }
@@ -159,14 +198,25 @@ namespace Webshop
     
     public static class Global
     {
-        public static List<Kunde> KundeList()
+        private static List<Kunde> _KundeList = LoadKundeList();
+        private static List<Vare> _VareList = LoadVareList();
+
+        public static List<Kunde> KundeList
         {
-            throw new System.NotImplementedException();
+            get => _KundeList;
+            set
+            {
+                _KundeList = value;
+            }
         }
 
-        public static List<Vare> VareList()
+        public static List<Vare> VareList
         {
-            throw new System.NotImplementedException();
+            get => _VareList;
+            set
+            {
+                _VareList = value;
+            }
         }
     }
 }

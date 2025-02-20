@@ -2,29 +2,55 @@
 {
     public static class VareList
     {
-
-        public static void LoadVareList()
+        public static string VareListPath = "VareList.txt";
+        public static void SaveVareList(List<Vare> VareList)
         {
-            throw new System.NotImplementedException();
+            string SavedLine = "";
+            foreach (Vare vare in VareList)
+            {
+                SavedLine += $"{vare.VareNummer},{vare.VareNavn},{vare.VarePris}\n";
+            }
+            File.WriteAllText(VareListPath, SavedLine);
         }
-
-        public static void SaveVareList()
+        public static List<Vare> LoadVareList()
         {
-            throw new System.NotImplementedException();
+            List<Vare> VareList = new List<Vare>();
+            String[] Lines = File.ReadAllLines(VareListPath);
+            foreach(string line in Lines)
+            {
+                string[] split = line.Split(",");
+                Vare vare = new Vare(Convert.ToInt32(split[0]), split[1], Convert.ToInt32(split[2]));
+                VareList.Add(vare);
+            }
+            return VareList;
         }
     }
 
     public static class KundeList
     {
-
-        public static void SaveKundeList()
+        public static string KundeListPath = "KundeList.txt";
+        public static void SaveKundeList(List<Kunde> KundeList)
         {
-            throw new System.NotImplementedException();
+            string SavedLine = "";
+            foreach (Kunde kunde in KundeList)
+            {
+                SavedLine += $"{kunde.Brugernavn},{kunde.Adgangskode},{kunde.KundeID}\n";
+            }
+            File.WriteAllText(KundeListPath, SavedLine);
         }
 
-        public static void LoadKundeList()
+        public static List<Kunde> LoadKundeList()
         {
-            throw new System.NotImplementedException();
+            List<Kunde> KundeList = new List<Kunde>();
+            String[] Lines = File.ReadAllLines(KundeListPath);
+            foreach (string line in Lines)
+            {
+                string[] split = line.Split(",");
+                Kunde kunde = new Kunde(split[0], split[1], Convert.ToInt32(split[2]));
+                KundeList.Add(kunde);
+            }
+            return KundeList;
+
         }
     }
 }
