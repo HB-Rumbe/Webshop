@@ -13,18 +13,13 @@
             string SavedLine = "";
             foreach (Vare vare in VareList)
             {
-                SavedLine += $"{vare.VareID},{vare.VareNavn},{vare.VarePris}\n";
+                SavedLine += $"{vare.VareNummer},{vare.VareNavn},{vare.VarePris}\n";
             }
             File.WriteAllText(VareListPath, SavedLine);
         }
         public static List<Vare> LoadVareList()
         {
-
             List<Vare> VareList = new List<Vare>();
-
-            if (!File.Exists(VareListPath))
-                return VareList;
-
             String[] Lines = File.ReadAllLines(VareListPath);
             foreach(string line in Lines)
             {
@@ -57,10 +52,6 @@
         public static List<Kunde> LoadKundeList()
         {
             List<Kunde> KundeList = new List<Kunde>();
-
-            if (!File.Exists(KundeListPath))
-                return KundeList;
-
             String[] Lines = File.ReadAllLines(KundeListPath);
             foreach (string line in Lines)
             {

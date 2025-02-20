@@ -28,17 +28,10 @@
       <FileName>BL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Webshop.Bruger">
-    <Position X="4.25" Y="1" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAQAAAIAAAAAAAAAAAAEAAAABAIAAAAASAAAIAAQ=</HashCode>
-      <FileName>BL.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Webshop.Vare">
     <Position X="6" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAEAAAIAEAAAAAAAAAAAAAhAAAAAAAAAAIAA=</HashCode>
+      <HashCode>AAAQAAAAAEgAAAAAAAAAAAAAAAAAAhAAAAAAAAAAIAA=</HashCode>
       <FileName>BL.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -46,6 +39,13 @@
     <Position X="8" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAQgACAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>BL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Webshop.Bruger">
+    <Position X="4.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAIAAAAAAAAAAAAEAAAABAIAAAAASAAAIAAQ=</HashCode>
       <FileName>BL.cs</FileName>
     </TypeIdentifier>
   </Class>

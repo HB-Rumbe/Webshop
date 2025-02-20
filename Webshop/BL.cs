@@ -1,5 +1,6 @@
-﻿using static Webshop.VareList;
-using static Webshop.KundeList;
+﻿using static Webshop.KundeList;
+using static Webshop.VareList;
+
 namespace Webshop
 {
 
@@ -22,6 +23,8 @@ namespace Webshop
             {
                 if (value != null)
                     _Adgangskode = value;
+                else
+                MessageBox.Show("Adgangskode ikke gyldigt");
             }
         }
 
@@ -32,6 +35,8 @@ namespace Webshop
             {
                 if (value != null)
                     _Brugernavn = value;
+                else
+                MessageBox.Show("Brugernavn ikke gyldigt");
             }
         }
 
@@ -59,14 +64,9 @@ namespace Webshop
             
         }
 
-        public int Bestil()
+        public void Bestil()
         {
-            int TotalPris = 0;
-            foreach (Vare vare in Kurv)
-            {
-                TotalPris += vare.VarePris;
-            }
-            return TotalPris;
+            throw new System.NotImplementedException();
         }
     }
 
@@ -78,18 +78,23 @@ namespace Webshop
         }
 
         public void CreateVare(int VareID, String VareNavn, int VarePris)
-        { 
+        {
+
             Global.VareList.Add(new Vare(VareID,VareNavn,VarePris));
         }
 
         public void DeleteVare(int VareID)
         {
-            Global.VareList.RemoveAll(vare => vare.VareID == VareID);
+            foreach (Vare vare in Global.VareList)
+            {
+                if (VareID == vare.VareID)
+                Global.VareList.Remove(vare);
+            }
         }
 
-        public List<Vare> ReadVareList()
+        public void ReadVareList()
         {
-            return Global.VareList;
+            throw new System.NotImplementedException();
         }
 
         public void UpdateVare(int VareID, string VareNavn, int VarePris)
@@ -105,9 +110,9 @@ namespace Webshop
             }
         }
 
-        public List<Kunde> ReadKundeList()
+        public void ReadKundeList()
         {
-            return Global.KundeList;
+            throw new System.NotImplementedException();
         }
     }
 
@@ -139,17 +144,9 @@ namespace Webshop
             }
         }
 
-        public static void OpretKunde(string Brugernavn, string Adgangskode)
+        public void OpretKunde()
         {
-            int KundeID = 1;
-            
-
-            while(Global.KundeList.Any(KundeList => KundeList.KundeID == KundeID))
-            {
-                KundeID++;
-            }
-
-            Global.KundeList.Add(new Kunde(Brugernavn, Adgangskode, KundeID));
+            throw new System.NotImplementedException();
         }
     }
 
